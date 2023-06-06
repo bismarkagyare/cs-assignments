@@ -8,7 +8,7 @@ const fibs = (num) => {
   return sequence;
 };
 
-console.log(fibs(8));
+//console.log(fibs(8));
 
 const fibsRec = (num, sequence = []) => {
   if (num === 0) {
@@ -19,7 +19,9 @@ const fibsRec = (num, sequence = []) => {
     return sequence;
   } else {
     sequence = fibsRec(num - 1, sequence);
-    sequence.push(sequence[num - 1] + sequence[num - 2]);
+    sequence.push(
+      sequence[sequence.length - 1] + sequence[sequence.length - 2]
+    );
     return sequence;
   }
 };
