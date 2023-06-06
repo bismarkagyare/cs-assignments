@@ -8,4 +8,20 @@ const fibs = (num) => {
   return sequence;
 };
 
-console.log(fibs(10));
+console.log(fibs(8));
+
+const fibsRec = (num, sequence = []) => {
+  if (num === 0) {
+    sequence.push(0);
+    return sequence;
+  } else if (num === 1) {
+    sequence.push(0, 1);
+    return sequence;
+  } else {
+    sequence = fibsRec(num - 1, sequence);
+    sequence.push(sequence[num - 1] + sequence[num - 2]);
+    return sequence;
+  }
+};
+
+console.log(fibsRec(8));
