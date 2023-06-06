@@ -1,14 +1,11 @@
 const fibs = (num) => {
   const sequence = [0, 1];
-  let num1 = 0;
-  let num2 = 1;
+
   for (let i = 2; i < num; i++) {
-    let res = num1 + num2;
-    num1 = num2;
-    num2 = res;
-    sequence.push(res);
+    const nextNumber = sequence[i - 1] + sequence[i - 2];
+    sequence.push(nextNumber);
   }
   return sequence;
 };
 
-console.log(fibs(7));
+console.log(fibs(10));
