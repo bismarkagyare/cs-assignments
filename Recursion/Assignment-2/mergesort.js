@@ -10,3 +10,26 @@ const mergeSort = (arr) => {
 
   return merge(sortedLeft, sortedRight);
 };
+
+const merge = (left, right) => {
+  const result = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
+
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] <= right[rightIndex]) {
+      result.push(left[leftIndex]);
+      leftIndex++;
+    } else {
+      result.push(right[rightIndex]);
+      rightIndex++;
+    }
+  }
+
+  result.push(...left.slice(leftIndex));
+  result.push(...right.slice(rightIndex));
+
+  return result;
+};
+
+console.log(mergeSort([7, 2, 5, 1, 8, 3]));
