@@ -10,20 +10,21 @@ const fibs = (num) => {
 
 //console.log(fibs(8));
 
-const fibsRec = (num, sequence = []) => {
-  if (num === 0) {
-    sequence.push(0);
-    return sequence;
-  } else if (num === 1) {
-    sequence.push(0, 1);
-    return sequence;
-  } else {
-    sequence = fibsRec(num - 1, sequence);
-    sequence.push(
-      sequence[sequence.length - 1] + sequence[sequence.length - 2]
-    );
+const fibsRec = (num, sequence = [0, 1]) => {
+  if (num < 1) {
+    return 'Invalid Number';
+  }
+
+  if (num === 1) {
+    return [0];
+  }
+
+  if (sequence.length === num) {
     return sequence;
   }
+
+  sequence.push(sequence[sequence.length - 1] + sequence[sequence.length - 2]);
+  return fibsRec(num, sequence);
 };
 
-console.log(fibsRec(8));
+console.log(fibsRec(10));
