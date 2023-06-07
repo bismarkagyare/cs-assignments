@@ -32,4 +32,4 @@ const merge = (left, right) => {
   return result;
 };
 
-console.log(mergeSort([7, 2, 5, 1, 8, 3]));
+console.log(mergeSort([4, 1, 8, 5, 2, 0]));
