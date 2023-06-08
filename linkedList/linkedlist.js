@@ -33,10 +33,22 @@ class Linkedlist {
     currentNode.next = newNode;
   }
 
-  //
+  //return the total number of nodes
+  size() {
+    let count = 0;
+    let currentNode = this.head;
+
+    while (currentNode !== null) {
+      count++;
+      currentNode = currentNode.next;
+    }
+
+    return count;
+  }
 }
 
 const linkedlist = new Linkedlist();
 linkedlist.prepend('test1');
 linkedlist.append('test2');
 console.log(linkedlist);
+console.log(linkedlist.size());
