@@ -45,6 +45,11 @@ class Linkedlist {
 
     return count;
   }
+
+  // return the head or first node item
+  getHead() {
+    return this.head;
+  }
 }
 
 const linkedlist = new Linkedlist();
@@ -52,3 +57,4 @@ linkedlist.prepend('test1');
 linkedlist.append('test2');
 console.log(linkedlist);
 console.log(linkedlist.size());
+console.log(linkedlist.getHead());
