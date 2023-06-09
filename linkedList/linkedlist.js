@@ -126,6 +126,21 @@ class Linkedlist {
 
     return null;
   }
+  //convert linkedlist items or nodes to string
+  toString() {
+    let currentNode = this.head;
+    let nodeString = '';
+
+    while (currentNode !== null) {
+      nodeString += currentNode.value;
+      if (currentNode.next !== null) {
+        nodeString += ', ';
+      }
+      currentNode = currentNode.next;
+    }
+
+    return nodeString;
+  }
 }
 
 const linkedlist = new Linkedlist();
@@ -142,3 +157,4 @@ console.log(linkedlist.getNodeAt(2));
 //console.log(linkedlist.pop());
 console.log(linkedlist.contains('test3'));
 console.log(linkedlist.find('test3'));
+console.log(linkedlist.toString());
