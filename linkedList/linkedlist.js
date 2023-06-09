@@ -108,6 +108,21 @@ class Linkedlist {
 
     return false;
   }
+
+  //returns the index of the node containing value
+  find(value) {
+    if (this.head === null) return null;
+
+    let index = 0;
+    let currentNode = this.head;
+    while (currentNode.next !== null) {
+      if (currentNode.value === value) {
+        return index;
+      }
+      currentNode = currentNode.next;
+      index++;
+    }
+  }
 }
 
 const linkedlist = new Linkedlist();
@@ -121,5 +136,6 @@ console.log(linkedlist.size());
 console.log(linkedlist.getHead());
 console.log(linkedlist.getTail());
 console.log(linkedlist.getNodeAt(2));
-console.log(linkedlist.pop());
-console.log(linkedlist.contains('test4'));
+//console.log(linkedlist.pop());
+console.log(linkedlist.contains('test3'));
+console.log(linkedlist.find('test3'));
