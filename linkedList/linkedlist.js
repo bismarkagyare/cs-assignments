@@ -50,11 +50,25 @@ class Linkedlist {
   getHead() {
     return this.head;
   }
+
+  tail() {
+    let currentNode = this.head;
+    if (currentNode) {
+      while (currentNode.next !== null) {
+        currentNode = currentNode.next;
+      }
+    }
+    return currentNode;
+  }
 }
 
 const linkedlist = new Linkedlist();
 linkedlist.prepend('test1');
 linkedlist.append('test2');
+linkedlist.append('test3');
+linkedlist.append('test4');
 console.log(linkedlist);
+
 console.log(linkedlist.size());
 console.log(linkedlist.getHead());
+console.log(linkedlist.tail());
