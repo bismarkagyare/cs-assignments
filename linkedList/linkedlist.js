@@ -94,6 +94,19 @@ class Linkedlist {
     previousNode.next = null;
     return currentNode.value;
   }
+  //returns true if the passed in value is in the list
+  contains(value) {
+    if (this.head === null) return null;
+
+    let currentNode = this.head;
+    while (currentNode.next !== null) {
+      if (currentNode.value === value) {
+        return true;
+      }
+      currentNode = currentNode.next;
+    }
+    return false;
+  }
 }
 
 const linkedlist = new Linkedlist();
@@ -108,3 +121,4 @@ console.log(linkedlist.getHead());
 console.log(linkedlist.getTail());
 console.log(linkedlist.getNodeAt(2));
 console.log(linkedlist.pop());
+console.log(linkedlist.contains('test2'));
