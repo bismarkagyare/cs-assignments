@@ -164,7 +164,7 @@ class Linkedlist {
   }
 
   //remove node at a given index
-  removeAt(index) {
+  removeNodeAt(index) {
     let currentIndex = 0;
     if (index === 0) {
       this.head = this.head.next;
@@ -197,5 +197,6 @@ console.log(linkedlist.contains('test3'));
 console.log(linkedlist.find('test3'));
 console.log(linkedlist.toString());
 linkedlist.insertAt('test10', 1);
+linkedlist.removeAt(1);
 console.log(linkedlist);
 console.log(linkedlist.toString());
