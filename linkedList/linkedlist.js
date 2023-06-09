@@ -50,7 +50,7 @@ class Linkedlist {
   getHead() {
     return this.head;
   }
-
+  // return the last item or node
   getTail() {
     let currentNode = this.head;
 
@@ -58,6 +58,20 @@ class Linkedlist {
       currentNode = currentNode.next;
     }
     return currentNode;
+  }
+
+  getNodeAt(index) {
+    let currentNode = this.head;
+    let currentIndex = 0;
+
+    while (currentNode !== null) {
+      if (currentIndex === index) {
+        return currentNode;
+      }
+      currentIndex++;
+      currentNode = currentNode.next;
+    }
+    return null;
   }
 }
 
@@ -70,4 +84,5 @@ console.log(linkedlist);
 
 console.log(linkedlist.size());
 console.log(linkedlist.getHead());
-console.log(linkedlist.tail());
+console.log(linkedlist.getTail());
+console.log(linkedlist.getNodeAt(2));
