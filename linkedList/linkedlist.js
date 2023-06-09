@@ -142,6 +142,7 @@ class Linkedlist {
     return nodeString;
   }
 
+  //insert node at a given index and values
   insertAt(value, index) {
     const newNode = new Node(value);
     if (index === 0) {
@@ -160,6 +161,23 @@ class Linkedlist {
 
     newNode.next = currentNode.next;
     currentNode.next = newNode;
+  }
+
+  //remove node at a given index
+  removeAt(index) {
+    let currentIndex = 0;
+    if (index === 0) {
+      this.head = this.head.next;
+    } else {
+      let currentNode = this.head;
+      let previousNode = null;
+      while (currentIndex < index) {
+        previousNode = currentNode;
+        currentNode = currentNode.next;
+        currentIndex++;
+      }
+      previousNode.next = currentNode.next;
+    }
   }
 }
 
