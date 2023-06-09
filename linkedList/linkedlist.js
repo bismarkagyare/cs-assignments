@@ -61,17 +61,17 @@ class Linkedlist {
   }
 
   getNodeAt(index) {
+    if (index < 0 || this.head === null) return null;
+
     let currentNode = this.head;
     let currentIndex = 0;
 
-    while (currentNode !== null) {
-      if (currentIndex === index) {
-        return currentNode;
-      }
-      currentIndex++;
+    while (currentNode !== null && currentIndex < index) {
       currentNode = currentNode.next;
+      currentIndex++;
     }
-    return null;
+
+    return currentNode;
   }
 }
 
