@@ -60,6 +60,7 @@ class Linkedlist {
     return currentNode;
   }
 
+  // return the node at a given index
   getNodeAt(index) {
     if (index < 0 || this.head === null) return null;
 
@@ -72,6 +73,26 @@ class Linkedlist {
     }
 
     return currentNode;
+  }
+
+  //remove the last node or item
+  pop() {
+    if (this.head === null) return null;
+
+    let currentNode = this.head;
+    if (currentNode.next === null) {
+      const removedNode = this.head;
+      this.head = null;
+      return removedNode;
+    }
+
+    let previousNode = null;
+    while (currentNode.next !== null) {
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+    previousNode.next = null;
+    return currentNode.value;
   }
 }
 
@@ -86,3 +107,4 @@ console.log(linkedlist.size());
 console.log(linkedlist.getHead());
 console.log(linkedlist.getTail());
 console.log(linkedlist.getNodeAt(2));
+console.log(linkedlist.pop());
