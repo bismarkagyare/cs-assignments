@@ -115,6 +115,7 @@ class Linkedlist {
 
     let index = 0;
     let currentNode = this.head;
+
     while (currentNode.next !== null) {
       if (currentNode.value === value) {
         return index;
@@ -122,6 +123,8 @@ class Linkedlist {
       currentNode = currentNode.next;
       index++;
     }
+
+    return null;
   }
 }
 
