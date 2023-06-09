@@ -105,6 +105,7 @@ class Linkedlist {
       }
       currentNode = currentNode.next;
     }
+
     return false;
   }
 }
@@ -121,4 +122,4 @@ console.log(linkedlist.getHead());
 console.log(linkedlist.getTail());
 console.log(linkedlist.getNodeAt(2));
 console.log(linkedlist.pop());
-console.log(linkedlist.contains('test2'));
+console.log(linkedlist.contains('test4'));
