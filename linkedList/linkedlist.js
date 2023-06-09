@@ -141,6 +141,26 @@ class Linkedlist {
 
     return nodeString;
   }
+
+  insertAt(value, index) {
+    const newNode = new Node(value);
+    if (index === 0) {
+      newNode.next = this.head;
+      this.head = newNode;
+      return;
+    }
+
+    let currentNode = this.head;
+    let currentIndex = 0;
+
+    while (currentNode !== null && currentIndex < index - 1) {
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
+
+    newNode.next = currentNode.next;
+    currentNode.next = newNode;
+  }
 }
 
 const linkedlist = new Linkedlist();
@@ -157,4 +177,7 @@ console.log(linkedlist.getNodeAt(2));
 //console.log(linkedlist.pop());
 console.log(linkedlist.contains('test3'));
 console.log(linkedlist.find('test3'));
+console.log(linkedlist.toString());
+linkedlist.insertAt('test10', 1);
+console.log(linkedlist);
 console.log(linkedlist.toString());
