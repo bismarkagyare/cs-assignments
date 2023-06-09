@@ -51,12 +51,11 @@ class Linkedlist {
     return this.head;
   }
 
-  tail() {
+  getTail() {
     let currentNode = this.head;
-    if (currentNode) {
-      while (currentNode.next !== null) {
-        currentNode = currentNode.next;
-      }
+
+    while (currentNode && currentNode.next) {
+      currentNode = currentNode.next;
     }
     return currentNode;
   }
